@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.848267253725">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 4.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Reviewing Pull Requests | has-a.space Docs</title>
+    <meta name="title" content="Reviewing Pull Requests | has-a.space Docs">
+    <meta name="description" content="Hello! Welcome to the has-a.space maintainer team. This document is intended to get you up to speed with the pull request reviewing process.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.has-a.space/maintainers/reviewing-prs/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.has-a.space/sitemap.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.has-a.space/maintainers/reviewing-prs/">
+    <meta property="og:title" content="Reviewing Pull Requests | has-a.space Docs">
+    <meta property="og:description" content="Hello! Welcome to the has-a.space maintainer team. This document is intended to get you up to speed with the pull request reviewing process.">
+    <meta property="og:image" content="https://docs.has-a.space/media/reviewing-prs/checks-need-approval.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Reviewing Pull Requests | has-a.space Docs">
+    <meta property="og:site_name" content="has-a.space Docs">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.has-a.space/maintainers/reviewing-prs/">
+    <meta name="twitter:title" content="Reviewing Pull Requests | has-a.space Docs">
+    <meta name="twitter:description" content="Hello! Welcome to the has-a.space maintainer team. This document is intended to get you up to speed with the pull request reviewing process.">
+    <meta name="twitter:image" content="https://docs.has-a.space/media/reviewing-prs/checks-need-approval.png">
+    <meta name="twitter:image:alt" content="Reviewing Pull Requests | has-a.space Docs">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.has-a.space/maintainers/reviewing-prs.md">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link id="retype-favicon" rel="icon" href="../../media/collar.svg" />
+    <link href="../../resources/css/retype.css?v=4.6.0.848267253725" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.848267253725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.848267253725" data-turbo-eval="false" defer></script>
+
+    <!-- _includes/head.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap" />
+    <link rel="apple-touch-icon" href="/media/apple-touch-icon.png" />
+
+    <style>
+        /* Retype's blues swapped for the has-a.space greens; html prefix outranks retype.css */
+        html:root {
+            --badge-base: #e5fded;
+            --badge-base-border: #ccfbdc;
+            --badge-base-border-hover: #87f4ac;
+            --badge-base-hover: #e5fded;
+            --badge-base-text: #22c55e;
+            --badge-base-text-hover: #22c55e;
+            --badge-contrast: #0a1a0f;
+            --badge-contrast-border: #0a1a0f;
+            --badge-contrast-border-hover: #162c1d;
+            --badge-ghost-hover: #f7fef9;
+            --badge-info-border: #22c55e;
+            --badge-info-border-hover: #a8f7c3;
+            --badge-info-text: #22c55e;
+            --badge-info-text-hover: #a8f7c3;
+            --badge-primary: #e3fbeb;
+            --badge-primary-border: #ccfbdc;
+            --badge-primary-border-hover: #87f5ac;
+            --badge-primary-hover: #e3fbeb;
+            --badge-primary-text: #16a34a;
+            --badge-primary-text-hover: #16a34a;
+            --base-100: color-mix(in srgb,#22c55e var(--mix-100),#fff);
+            --base-200: color-mix(in srgb,#22c55e var(--mix-200),#fff);
+            --base-300: color-mix(in srgb,#22c55e var(--mix-300),#fff);
+            --base-400: color-mix(in srgb,#22c55e var(--mix-400),#fff);
+            --base-50: color-mix(in srgb,#22c55e var(--mix-50),#fff);
+            --base-600: color-mix(in srgb,#22c55e var(--mix-600),#000);
+            --base-700: color-mix(in srgb,#22c55e var(--mix-700),#000);
+            --base-800: color-mix(in srgb,#22c55e var(--mix-800),#000);
+            --base-900: color-mix(in srgb,#22c55e var(--mix-900),#000);
+            --base-item-bg-active: #e5fded;
+            --base-item-bg-hover: #edfef3;
+            --base-link: #22c55e;
+            --base-link-hover: #309151;
+            --base-text-strong: #0a1a0f;
+            --body-link-decoration-color: #ccfbdc;
+            --body-link-decoration-color-hover: #49db7b;
+            --branding-label-border: #a8f7c3;
+            --button-base: #22c55e;
+            --button-base-hover: #44c16f;
+            --button-base-text: #edfef3;
+            --button-contrast: #0a1a0f;
+            --button-contrast-text: #f7fef9;
+            --button-dark-text: #f7fef9;
+            --button-ghost-hover: #eef6f1;
+            --button-info-border: #22c55e;
+            --button-info-border-hover: #a8f7c3;
+            --button-info-text: #22c55e;
+            --button-info-text-hover: #a8f7c3;
+            --button-light-text: #0a1a0f;
+            --button-primary: #16a34a;
+            --button-primary-hover: #41c06c;
+            --button-primary-text: #ecfff2;
+            --button-secondary-text: #f7fef9;
+            --callout-base: #22c55e;
+            --callout-contrast-bg: #0a1a0f;
+            --callout-contrast-border: #0a1a0f;
+            --callout-dark: #0a1a0f;
+            --callout-info: #a8f7c3;
+            --callout-primary: #16a34a;
+            --footnote-popper-bg: #e5fded;
+            --footnote-popper-border: #ccfbdc;
+            --footnote-popper-code-border: #ccfbdc;
+            --footnote-popper-link: #22c55e;
+            --footnote-popper-link-hover: #44c16f;
+            --footnote-popper-ref-open-bg: #e5fded;
+            --footnote-popper-ref-open-border: #ccfbdc;
+            --footnote-popper-ref-open-text: #22c55e;
+            --footnote-popper-text: #22c55e;
+            --gray-100: #f4fcf7;
+            --gray-150: #edf6f0;
+            --gray-200: #e4f1e8;
+            --gray-50: #f8fcf9;
+            --gray-800: #182d1f;
+            --gray-850: #102316;
+            --gray-900: #091c0f;
+            --grid: #16a34a;
+            --heading-text: #0a1a0f;
+            --list-checked: #22c55e;
+            --nav-item-border-active: #22c55e;
+            --nav-item-button-active-hover: #ccfbdc;
+            --nav-item-text: #0a1a0f;
+            --pager-bg-active: #22c55e;
+            --pager-bg-active-hover: #87f4ac;
+            --pager-bg-hover: #eef6f1;
+            --pager-border-active: #49db7b;
+            --pager-border-active-hover: #22c55e;
+            --pager-text: #22c55e;
+            --pager-text-hover: #22c55e;
+            --primary-100: color-mix(in srgb,#16a34a var(--mix-100),#fff);
+            --primary-200: color-mix(in srgb,#16a34a var(--mix-200),#fff);
+            --primary-300: color-mix(in srgb,#16a34a var(--mix-300),#fff);
+            --primary-400: color-mix(in srgb,#16a34a var(--mix-400),#fff);
+            --primary-50: color-mix(in srgb,#16a34a var(--mix-50),#fff);
+            --primary-600: color-mix(in srgb,#16a34a var(--mix-600),#000);
+            --primary-700: color-mix(in srgb,#16a34a var(--mix-700),#000);
+            --primary-800: color-mix(in srgb,#16a34a var(--mix-800),#000);
+            --primary-900: color-mix(in srgb,#16a34a var(--mix-900),#000);
+            --search-highlight-bg: #e5fded;
+            --search-result-active-ring: #ccfbdc;
+            --selection-bg: #ccfbdc;
+            --selector: #16a34a;
+            --steps-step-number-bg: #22c55e;
+            --steps-step-number-border: #22c55e;
+            --tab-border-active: #22c55e;
+            --tab-text-active: #22c55e;
+            --tab-text-hover: #22c55e;
+            --toc-border-active: #22c55e;
+            --toc-text-active: #22c55e;
+            --toc-text-hover: #22c55e;
+        }
+
+        html.dark {
+            --badge-base-hover: #ccfbdc;
+            --badge-primary-hover: #ccfbdc;
+            --base-link-hover: #a8f7c3;
+            --body-link-decoration-color: #309151;
+            --body-link-decoration-color-hover: #22c55e;
+            --branding-label-border: #22c55e;
+            --branding-label-text: #22c55e;
+            --footnote-popper-link-hover: #49db7b;
+            --footnote-popper-ref-open-bg: color-mix(in srgb,#e5fded 90%,transparent);
+            --footnote-popper-ref-open-border: color-mix(in srgb,#ccfbdc 90%,transparent);
+            --pager-bg-active: #44c16f;
+            --pager-bg-active-hover: #22c55e;
+            --pager-border-active: #309151;
+            --pager-border-active-hover: #49db7b;
+            --search-highlight-bg: #309151;
+            --selection-bg: #44c16f;
+            --tab-border-active: #22c55e;
+            --tab-text-active: #22c55e;
+            --base-bg: #0b0a0d;
+            --base-text: #ece9ef;
+            --base-text-muted: #a49eab;
+        }
+
+        body,
+        .retype-markdown {
+            font-family: "IBM Plex Sans", system-ui, sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        .retype-markdown h1,
+        .retype-markdown h2 {
+            font-family: "Gochi Hand", cursive;
+            letter-spacing: 0.01em;
+        }
+
+        .retype-markdown h1 button,
+        .retype-markdown h2 button {
+            font-family: "IBM Plex Sans", system-ui, sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+    
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://docs.has-a.space/" class="flex items-center leading-snug text-xl">
+                        <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                            <img class="max-h-10 md:inline-block" src="../../media/collar.svg" alt="">
+                        </span>
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">has-a.space Docs</span>
+                    </a>
+                </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                </svg>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://has-a.space">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1Zm3.241 10.5v-.001c-.1-2.708-.992-4.904-1.89-6.452a13.919 13.919 0 0 0-1.304-1.88L12 3.11l-.047.059c-.354.425-.828 1.06-1.304 1.88-.898 1.547-1.79 3.743-1.89 6.451Zm-12.728 0h4.745c.1-3.037 1.1-5.49 2.093-7.204.39-.672.78-1.233 1.119-1.673C6.11 3.329 2.746 7 2.513 11.5Zm18.974 0C21.254 7 17.89 3.329 13.53 2.623c.339.44.729 1.001 1.119 1.673.993 1.714 1.993 4.167 2.093 7.204ZM8.787 13c.182 2.478 1.02 4.5 1.862 5.953.382.661.818 1.29 1.304 1.88l.047.057.047-.059c.354-.425.828-1.06 1.304-1.88.842-1.451 1.679-3.471 1.862-5.951Zm-1.504 0H2.552a9.505 9.505 0 0 0 7.918 8.377 15.773 15.773 0 0 1-1.119-1.673C8.413 18.085 7.47 15.807 7.283 13Zm9.434 0c-.186 2.807-1.13 5.085-2.068 6.704-.39.672-.78 1.233-1.118 1.673A9.506 9.506 0 0 0 21.447 13Z"/>
+                                </svg>
+                                <span>Website</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/has-a-space/register" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
+                                </svg>
+                                <span>Register</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://discord.gg/KFEN5E3PyR" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                </svg>
+                                <span>Discord</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="../../">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M11.03 2.59a1.501 1.501 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/>
+                                        </svg>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://has-a.space">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1Zm3.241 10.5v-.001c-.1-2.708-.992-4.904-1.89-6.452a13.919 13.919 0 0 0-1.304-1.88L12 3.11l-.047.059c-.354.425-.828 1.06-1.304 1.88-.898 1.547-1.79 3.743-1.89 6.451Zm-12.728 0h4.745c.1-3.037 1.1-5.49 2.093-7.204.39-.672.78-1.233 1.119-1.673C6.11 3.329 2.746 7 2.513 11.5Zm18.974 0C21.254 7 17.89 3.329 13.53 2.623c.339.44.729 1.001 1.119 1.673.993 1.714 1.993 4.167 2.093 7.204ZM8.787 13c.182 2.478 1.02 4.5 1.862 5.953.382.661.818 1.29 1.304 1.88l.047.057.047-.059c.354-.425.828-1.06 1.304-1.88.842-1.451 1.679-3.471 1.862-5.951Zm-1.504 0H2.552a9.505 9.505 0 0 0 7.918 8.377 15.773 15.773 0 0 1-1.119-1.673C8.413 18.085 7.47 15.807 7.283 13Zm9.434 0c-.186 2.807-1.13 5.085-2.068 6.704-.39.672-.78 1.233-1.118 1.673A9.506 9.506 0 0 0 21.447 13Z"/>
+                                        </svg>
+                                        <span>Website</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/has-a-space/register" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
+                                        </svg>
+                                        <span>Register</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://discord.gg/KFEN5E3PyR" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 14.25 14H8.061l-2.574 2.573A1.458 1.458 0 0 1 3 15.543V14H1.75A1.75 1.75 0 0 1 0 12.25v-9.5C0 1.784.784 1 1.75 1ZM1.5 2.75v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"/><path d="M22.5 8.75a.25.25 0 0 0-.25-.25h-3.5a.75.75 0 0 1 0-1.5h3.5c.966 0 1.75.784 1.75 1.75v9.5A1.75 1.75 0 0 1 22.25 20H21v1.543a1.457 1.457 0 0 1-2.487 1.03L15.939 20H10.75A1.75 1.75 0 0 1 9 18.25v-1.465a.75.75 0 0 1 1.5 0v1.465c0 .138.112.25.25.25h5.5a.75.75 0 0 1 .53.22l2.72 2.72v-2.19a.75.75 0 0 1 .75-.75h2a.25.25 0 0 0 .25-.25v-9.5Z"/>
+                                        </svg>
+                                        <span>Discord</span>
+                                    </a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="reviewing-pull-requests">Reviewing Pull Requests</h1>
+<p>Hello! Welcome to the has-a.space maintainer team. This document is intended to get you up to speed with the pull request reviewing process.</p>
+<p>First and most importantly, please read the <a href="https://docs.has-a.space">documentation</a>. All of it. Seriously. It&#x27;s important. Additionally, take a cursory glance over our <a href="https://has-a.space/terms">Terms of Service</a>.</p>
+<p>Let&#x27;s begin.</p>
+<h2 id="when-to-instantly-close-a-pr">When to Instantly Close a PR</h2>
+<p>You should instantly close a pull request when:</p>
+<ol>
+<li>The website has no preview provided <em>and</em> isn&#x27;t accessible. We expect previews for <em>all</em> webpages.</li>
+<li>The checkbox stating the user&#x27;s agreement to our <a href="https://has-a.space/terms">ToS</a> (Terms of Service) has not been checked.</li>
+<li>The PR is requesting NS records without a valid reason or without a reason provided at all. See <a href="https://docs.has-a.space/faq/#who-can-use-ns-records">this page</a> for details on what we consider a valid reason to request NS records.</li>
+<li>The user violates our ToS in any way; e.g., if they are under thirteen years of age, if their webpage is breaking the law or hosting illegal content, cryptocurrency mining sites or tools, impersonation without consent, et cetera.</li>
+<li>The webpage is not related to software development. This does not apply for nested subdomains<a id="fnref:1" href="#fn:1" class="retype-footnote"><sup>1</sup></a></li>
+<li>Webpages who want to use our subdomain for commercial purposes. Including but not limited to <em>anything</em> with a &quot;pricing plan&quot; page. A portfolio stating that the user is available for hire is not considered commercial usage.</li>
+<li>The user breaks GitHub&#x27;s <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service">Terms of Service</a>.</li>
+<li>The PR is a duplicate of another PR (i.e., the user made multiple PRs in the hopes of getting their domain faster).</li>
+<li>Any one the &quot;Requirements&quot; checkboxes have not been fulfilled.</li>
+</ol>
+<h2 id="steps-to-reviewing-a-pr">Steps to Reviewing a PR</h2>
+<p>First, approve checks if needed. Do this by clicking the button at the bottom of the PR labelled &quot;Approve workflows to run&quot;.</p>
+<figure class="content-center">
+    <img src="../../media/reviewing-prs/checks-need-approval.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="867" height="192" />
+    <figcaption class="caption"></figcaption>
+</figure>
+<p>Now, check the preview (if applicable) or attempt to access the website based on the DNS records in the JSON file (in the &quot;Files changed&quot; tab at the top of the pull request). Now, judge if it should be closed based on the above &quot;When to Instantly Close a PR&quot;.</p>
+<p>You cannot merge a PR if the checks do not pass. If the checks fail, examine the JSON file(s) and their respective filename(s) and/or the &quot;View details&quot; button under the menu which itself is under the &quot;Some checks were not successful&quot; message.</p>
+<figure class="content-center">
+    <img src="../../media/reviewing-prs/checks-failed.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="921" height="334" />
+    <figcaption class="caption"></figcaption>
+</figure>
+<p><em>Request changes</em> based on the issues at hand. Do not be rude in your review and act professionally. We recommend using reviewbot to streamline the process of requesting changes!</p>
+<p>If there are no issues with the PR at this point, you are free to merge it.
+If you requested changes, please <em>apply labels to the PR</em>. For example, if the PR violates our ToS because it is a commercial website:</p>
+<figure class="content-center">
+    <img src="../../media/reviewing-prs/apply-labels.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="371" height="202" />
+    <figcaption class="caption"></figcaption>
+</figure>
+<h2 id="tips--tricks">Tips &amp; Tricks</h2>
+<ol>
+<li>Use GitHub&#x27;s saved replies feature to speed up reviewing. You can create and edit saved replies <a href="https://github.com/settings/replies">here</a>. Here&#x27;s an example:</li>
+</ol>
+<figure class="content-center">
+    <img src="../../media/reviewing-prs/example-saved-reply.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1385" height="670" />
+    <figcaption class="caption"></figcaption>
+</figure>
+<p>You can use quickly select and use saved replies in the reply/reviewing text box by pressing Ctrl/Command + Period (.) together.</p>
+<p>We recommend using reviewbot instead of saved replies, however! See the next section.</p>
+<ol start="2">
+<li>
+<p>Mass approve checks first, review afterwards. This allows you to skip the hassle of waiting for checks to finish running.</p>
+</li>
+<li>
+<p>When unsure of whether or not to approve or request changes on a PR, do not hesitate to ask another, more experienced maintainer on how to deal with it. You can also simply skip the PR and wait for someone else to review it.</p>
+</li>
+</ol>
+<h2 id="reviewbot">Reviewbot</h2>
+<p>A very helpful tool we have at our disposal is <a href="https://github.com/iostpa/reviewbot">reviewbot</a>. Reviewbot is a GitHub bot maintained by <a href="https://iostpa.com">iostpa</a> which sends a comment in a pull request upon the application of labels with an explanation of each label in some detail. Reviewbot can also optionally close a pull request based on the <code translate="no" v-pre>status: denied</code> label.</p>
+<p>Example usage would be as follows: on a pull request that adds a website unrelated to software development, you should add the <code translate="no" v-pre>status: denied</code> and <code translate="no" v-pre>reason: not dev related</code> labels to the pull request, and simply move on. Reviewbot will close the pull request on your behalf and explain the reason why the pull request was denied in detail to the PR author.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Note: You may use <code translate="no" v-pre>status: invalid</code> to simply request changes on a PR instead of closing it.</p>
+        </div>
+    </div>
+</div>
+<p>Please use <code translate="no" v-pre>status: denied</code> or <code translate="no" v-pre>status: invalid</code> in conjuction with other <code translate="no" v-pre>reason: x</code> labels (or <code translate="no" v-pre>status: needs preview</code>). If none of the labels fit the reason why you denied the pull request, use <code translate="no" v-pre>reason: other</code> in conjuction with either status label and comment your reason directly in the pull request.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Reviewbot has a 3 second time window. This means that you can make last-minute changes before reviewbot starts sending the message.</p>
+        </div>
+    </div>
+</div>
+<p>Here is an example of using reviewbot with the <code translate="no" v-pre>status: denied</code> and <code translate="no" v-pre>reason: not dev related</code> labels:</p>
+<figure class="content-center">
+    <img src="../../media/reviewbot-example.png" alt="reviewbot example" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="915" height="608" />
+    <figcaption class="caption">reviewbot example</figcaption>
+</figure>
+<div class="retype-footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Nested subdomains are a subdomain of a subdomain, such as <code translate="no" v-pre>nested.example.has-a.space</code>. <code translate="no" v-pre>example.has-a.space</code> is not a nested subdomain, it is a subdomain!<a href="#fnref:1" class="footnote-back-ref"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.53 5.03a.75.75 0 1 0-1.06-1.06l-6.25 6.25a.75.75 0 0 0 0 1.06l6.25 6.25a.75.75 0 1 0 1.06-1.06L5.56 11.5H17a3.248 3.248 0 0 1 3.25 3.248v4.502a.75.75 0 0 0 1.5 0v-4.502A4.748 4.748 0 0 0 17 10H5.56l4.97-4.97Z"/></g></g></svg></a></p>
+</li>
+</ol>
+</div>
+
+                
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+            </div>
+            <footer id="retype-content-footer" class="clear-both">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-14">
+                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link hover:text-body-link-hover hover:underline" href="https://github.com/has-a-space/docs/blob/main/src/maintainers/reviewing-prs.md" target="_blank" rel="noopener">
+                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        <span>Edit this page</span>
+                    </a>
+                </div>
+            
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                        <li>
+                            <a class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-footer-link hover:text-footer-link-hover md:mb-0" href="https://github.com/has-a-space/docs">has-a-space/docs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 has-a.space. Based on the is-a.dev docs (GPL-3.0).</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
+
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+    <div id="retype-overlay-target"></div>
+
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Reviewing PRs", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/maintainers/reviewing-prs.md" }</script>
+</body>
+</html>

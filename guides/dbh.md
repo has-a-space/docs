@@ -1,0 +1,38 @@
+!!!danger
+This hosting provider has changed a lot in recent times, so this guide may not be up to date with the current system the hosting provider has.
+!!!
+
+# Setting up DanBot Hosting with an has-a.space subdomain
+
+This guide will walk you through the process of setting up a DanBot Hosting website and pointing your has-a.space subdomain to it.
+
+## Proxy IP
+
+The current proxy IP is: 82.38.134.96 for Proxy #1 at [DanBot Hosting](https://discord.gg/dbh)
+
+### Creating the domain file
+
+Create a JSON file inside `domains` directory (`domains/subdomain.json`) with the following content and submit a pull request:
+
+```json
+{
+    "owner": {
+        "username": "github-username"
+    },
+    "records": {
+        "A": ["proxy-ip-here"]
+    }
+}
+```
+
+**Note:** Don't forget to provide a preview of your website in your pull request.
+
+## Configuring
+
+After your pull request is merged, locate the server you wish to proxy. Head on over to the domains tab after selecting your server.
+
+![](../media/dbh_proxy/DoaminsTab.png)
+
+Enter your subdomain you wish to use, like: your-subdomain.has-a.space, select the SSL option and hit link button.
+
+![](../media/dbh_proxy/DoaminsTab-Proxy.png)
