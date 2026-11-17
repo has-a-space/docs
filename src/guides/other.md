@@ -5,7 +5,7 @@ icon: server
 tags: guides
 ---
 
-# Setting up other services with meowed-at.me
+# Setting up other services with has-a.space
 
 ## Setting up records
 
@@ -13,6 +13,6 @@ Read the [domain file structure](../useful/domain-structure) and set up the reco
 
 ## Configuring your server
 
-After the pull request is merged, configure your server (apache, nginx, etc.) to work with `subdomain.meowed-at.me`. If you are unsure how to configure your server, you can [create an issue](https://github.com/meowed-at-me/register/issues/new/choose) for support.
+After the pull request is merged, configure your server (apache, nginx, etc.) to work with `subdomain.has-a.space`. If you are unsure how to configure your server, you can [create an issue](https://github.com/has-a-space/register/issues/new/choose) for support.
 
-You should also include `subdomain.meowed-at.me` in your ssl certificate to get rid of certificate errors.
+You should also include `subdomain.has-a.space` in your ssl certificate to get rid of certificate errors.

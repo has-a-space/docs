@@ -9,9 +9,9 @@ icon: /media/dbh.png
 This hosting provider has changed a lot in recent times, so this guide may not be up to date with the current system the hosting provider has.
 !!!
 
-# Setting up DanBot Hosting with an meowed-at.me subdomain
+# Setting up DanBot Hosting with an has-a.space subdomain
 
-This guide will walk you through the process of setting up a DanBot Hosting website and pointing your meowed-at.me subdomain to it.
+This guide will walk you through the process of setting up a DanBot Hosting website and pointing your has-a.space subdomain to it.
 
 ## Proxy IP
 
@@ -36,10 +36,10 @@ Create a JSON file inside `domains` directory (`domains/subdomain.json`) with th
 
 ## Configuring
 
-After your pull request is merged, locate the server you wish to proxy. Head on over to the domains tab after selecting your server. 
+After your pull request is merged, locate the server you wish to proxy. Head on over to the domains tab after selecting your server.
 
 ![](../media/dbh_proxy/DoaminsTab.png)
 
-Enter your subdomain you wish to use, like: your-subdomain.meowed-at.me, select the SSL option and hit link button. 
+Enter your subdomain you wish to use, like: your-subdomain.has-a.space, select the SSL option and hit link button.
 
 ![](../media/dbh_proxy/DoaminsTab-Proxy.png)

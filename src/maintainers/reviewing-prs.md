@@ -3,9 +3,9 @@ label: Reviewing PRs
 ---
 
 # Reviewing Pull Requests
-Hello! Welcome to the meowed-at.me maintainer team. This document is intended to get you up to speed with the pull request reviewing process.
+Hello! Welcome to the has-a.space maintainer team. This document is intended to get you up to speed with the pull request reviewing process.
 
-First and most importantly, please read the [documentation](https://docs.meowed-at.me). All of it. Seriously. It's important. Additionally, take a cursory glance over our [Terms of Service](https://meowed-at.me/terms).
+First and most importantly, please read the [documentation](https://docs.has-a.space). All of it. Seriously. It's important. Additionally, take a cursory glance over our [Terms of Service](https://has-a.space/terms).
 
 Let's begin.
 
@@ -13,8 +13,8 @@ Let's begin.
 You should instantly close a pull request when:
 
 1. The website has no preview provided *and* isn't accessible. We expect previews for *all* webpages.
-2. The checkbox stating the user's agreement to our [ToS](https://meowed-at.me/terms) (Terms of Service) has not been checked.
-3. The PR is requesting NS records without a valid reason or without a reason provided at all. See [this page](https://docs.meowed-at.me/faq/#who-can-use-ns-records) for details on what we consider a valid reason to request NS records.
+2. The checkbox stating the user's agreement to our [ToS](https://has-a.space/terms) (Terms of Service) has not been checked.
+3. The PR is requesting NS records without a valid reason or without a reason provided at all. See [this page](https://docs.has-a.space/faq/#who-can-use-ns-records) for details on what we consider a valid reason to request NS records.
 4. The user violates our ToS in any way; e.g., if they are under thirteen years of age, if their webpage is breaking the law or hosting illegal content, cryptocurrency mining sites or tools, impersonation without consent, et cetera.
 5. The webpage is not related to software development. This does not apply for nested subdomains![^1]
 6. Webpages who want to use our subdomain for commercial purposes. Including but not limited to *anything* with a "pricing plan" page. A portfolio stating that the user is available for hire is not considered commercial usage.
@@ -22,7 +22,7 @@ You should instantly close a pull request when:
 8. The PR is a duplicate of another PR (i.e., the user made multiple PRs in the hopes of getting their domain faster).
 9. Any one the "Requirements" checkboxes have not been fulfilled.
 
-[^1]: Nested subdomains are a subdomain of a subdomain, such as `nested.example.meowed-at.me`. `example.meowed-at.me` is not a nested subdomain, it is a subdomain!
+[^1]: Nested subdomains are a subdomain of a subdomain, such as `nested.example.has-a.space`. `example.has-a.space` is not a nested subdomain, it is a subdomain!
 
 ## Steps to Reviewing a PR
 First, approve checks if needed. Do this by clicking the button at the bottom of the PR labelled "Approve workflows to run".

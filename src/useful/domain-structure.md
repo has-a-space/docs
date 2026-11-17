@@ -7,7 +7,7 @@ tags: useful
 # Domain Structure
 
 To register a subdomain, submit a pull request with a new JSON file in the `domains` directory.
-For example, to register `example.meowed-at.me`, create a file named `example.json` in `domains/`:
+For example, to register `example.has-a.space`, create a file named `example.json` in `domains/`:
 
 ```
 domains/example.json
@@ -17,7 +17,7 @@ domains/example.json
 
 ## Filename Guidelines
 
-To register a nested subdomain like `blog.example.meowed-at.me`, use dots (`.`) in the filename:
+To register a nested subdomain like `blog.example.has-a.space`, use dots (`.`) in the filename:
 `blog.example.json`
 
 Each part of the filename (i.e., each subdomain label) must follow these rules:
@@ -26,7 +26,7 @@ Each part of the filename (i.e., each subdomain label) must follow these rules:
 * Minimum of **1 character**, maximum of **244 characters** (excluding `.json`).
 * Each label (segment between dots) must be **≤ 63 characters**.
 * File must **end with `.json`**.
-* **Must not contain `meowed-at.me`**.
+* **Must not contain `has-a.space`**.
 * **Must not begin with a dot**, or contain spaces or invalid characters.
 
 ### Invalid Filenames
@@ -40,7 +40,7 @@ Each part of the filename (i.e., each subdomain label) must follow these rules:
 | `a .json`                     | Contains a space                    |
 | `a$.json`                     | Non-alphanumeric character          |
 | `a.json.json`                 | Multiple extensions                 |
-| `a.meowed-at.me.json`             | Contains reserved string `meowed-at.me` |
+| `a.has-a.space.json`             | Contains reserved string `has-a.space` |
 | `a--a.json`                   | Consecutive dashes                  |
 | `blog._a.json`                | Label starts with an underscore     |
 | `abc123.aaaaaaaa...aaaa.json` | Label exceeds 63 characters         |
@@ -69,10 +69,10 @@ Each part of the filename (i.e., each subdomain label) must follow these rules:
 ```json
 {
   "owner": {
-    "username": "meowed-at-me"
+    "username": "has-a-space"
   },
   "records": {
-    "CNAME": "meowed-at-me.github.io"
+    "CNAME": "has-a-space.github.io"
   }
 }
 ```
@@ -171,7 +171,7 @@ See all supported record types in the [FAQ](./faq#which-dns-record-types-are-sup
   "NS": ["ns1.example.com", "ns2.example.com"]
   ```
 
-  > Refer to the [FAQ](https://docs.meowed-at.me/faq/#who-can-use-ns-records) for guidance on valid use cases.
+  > Refer to the [FAQ](https://docs.has-a.space/faq/#who-can-use-ns-records) for guidance on valid use cases.
 
 * **SRV**
   Defines service records:

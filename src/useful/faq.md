@@ -26,7 +26,7 @@ We support the following DNS record types:
 
 ---
 
-## Why does my domain still redirect to the meowed-at.me homepage?
+## Why does my domain still redirect to the has-a.space homepage?
 
 This usually happens due to browser caching. [Clear your browser cache](https://support.google.com/accounts/answer/32050) and try again.
 
@@ -34,19 +34,19 @@ This usually happens due to browser caching. [Clear your browser cache](https://
 
 ## Can I use a CNAME record with other record types?
 
-No, unless the domain is proxied. A `CNAME` cannot be combined with other record types (`A`, `MX`, `TXT`, etc.) in the same record set. For exceptions and setup instructions, see [Proxying Your Domain](https://docs.meowed-at.me/domain-structure/#-proxied-optional).
+No, unless the domain is proxied. A `CNAME` cannot be combined with other record types (`A`, `MX`, `TXT`, etc.) in the same record set. For exceptions and setup instructions, see [Proxying Your Domain](https://docs.has-a.space/domain-structure/#-proxied-optional).
 
 ---
 
 ## How long does it take for my pull request to be merged?
 
-We're a team of volunteers, and meowed-at.me is a side project for us, so review times can vary. We'll get to your PR as soon as we can.
+We're a team of volunteers, and has-a.space is a side project for us, so review times can vary. We'll get to your PR as soon as we can.
 
 ---
 
 ## Which platforms or services are supported?
 
-While you can use almost any service, these are the most commonly used with meowed-at.me:
+While you can use almost any service, these are the most commonly used with has-a.space:
 
 * GitHub Pages
 * Netlify
@@ -54,9 +54,9 @@ While you can use almost any service, these are the most commonly used with meow
 
 ---
 
-## Can I create nested subdomains (e.g., `sub.example.meowed-at.me`)?
+## Can I create nested subdomains (e.g., `sub.example.has-a.space`)?
 
-Yes! You can nest subdomains as deeply as you'd like. To create one, name your file like `blog.example.json`. You **must own** `example.meowed-at.me` to register `blog.example.meowed-at.me`.
+Yes! You can nest subdomains as deeply as you'd like. To create one, name your file like `blog.example.json`. You **must own** `example.has-a.space` to register `blog.example.has-a.space`.
 
 ---
 
@@ -66,7 +66,7 @@ Go to your GitHub Pages settings for your repository and **enable "Enforce HTTPS
 
 ---
 
-## Can I become a maintainer or join the meowed-at.me team?
+## Can I become a maintainer or join the has-a.space team?
 
 We don't accept direct applications. Team members are **handpicked**, often based on community involvement and support activity. Even then, it does **not guarantee** a position.
 
@@ -76,7 +76,7 @@ We don't accept direct applications. Team members are **handpicked**, often base
 
 * If **your PR containing sensitive information has not been merged**, contact us immediately:
 
-  * Email: [admin@meowed-at.me](mailto:admin@meowed-at.me)
+  * Email: [admin@has-a.space](mailto:admin@has-a.space)
   * Discord: [our server](https://discord.gg/KFEN5E3PyR)
 
 * If your PR **has already been merged**, we cannot retroactively remove it.
@@ -88,8 +88,8 @@ We don't accept direct applications. Team members are **handpicked**, often base
 Yes, use an `A` record and an `SRV` record.
 Refer to this [Namecheap article](https://www.namecheap.com/support/knowledgebase/article.aspx/9765/2208/how-can-i-link-my-domain-name-to-a-minecraft-server) for guidance.
 
-> ⚠️ Root subdomains (e.g., `yourname.meowed-at.me`) **must relate to software development** as required in our [Terms of Service](https://meowed-at.me/terms).
-> Use a *nested* subdomain (e.g., `mc.yourname.meowed-at.me`) for Minecraft.
+> ⚠️ Root subdomains (e.g., `yourname.has-a.space`) **must relate to software development** as required in our [Terms of Service](https://has-a.space/terms).
+> Use a *nested* subdomain (e.g., `mc.yourname.has-a.space`) for Minecraft.
 
 ---
 
@@ -110,9 +110,9 @@ We **do not allow** NS records for:
 * Non-functional or placeholder purposes
 * Self hosting websites that can be easily hosted on a free platform like GitHub Pages
 * If we have security or abuse concerns
-* New users of meowed-at.me
-  * If you have not had an meowed-at.me subdomain for at least 30 days, you will be denied due to security reasons.
-* Users that have abused meowed-at.me subdomains in the past
+* New users of has-a.space
+  * If you have not had an has-a.space subdomain for at least 30 days, you will be denied due to security reasons.
+* Users that have abused has-a.space subdomains in the past
 
 > ⚠️ **We reserve the right to deny any NS request at our discretion for any reason.**
 
@@ -133,11 +133,11 @@ NS records give full control over DNS for a subdomain. That opens the door to mi
 
 ---
 
-## How can I update or delete my meowed-at.me subdomain?
+## How can I update or delete my has-a.space subdomain?
 
 Follow these steps:
 
-1. **Review the [documentation](https://docs.meowed-at.me) and [ToS](https://meowed-at.me/terms)**.
+1. **Review the [documentation](https://docs.has-a.space) and [ToS](https://has-a.space/terms)**.
 2. **Open your JSON file** (in `/domains/your-subdomain.json`).
 3. **Make your changes** (or delete the file if you're removing your domain).
 4. **Commit the changes** to your fork.

@@ -5,13 +5,13 @@ label: Railway
 tags: guides
 ---
 
-# Setting up meowed-at.me with Railway
+# Setting up has-a.space with Railway
 
 ## Getting the CNAME Record
 
 1. Navigate to the [dashboard](https://railway.app/dashboard) > project > service
 2. Switch to the **Settings** tab and click on **+ Custom Domain** button.
-3. Enter the `meowed-at.me` subdomain you want to use (ex: `subdomain.meowed-at.me`)
+3. Enter the `has-a.space` subdomain you want to use (ex: `subdomain.has-a.space`)
 4. Copy the **Value** field for `@` and create `subdomain.json`
   ```json
   {
@@ -41,4 +41,4 @@ tags: guides
 !!!
 
 - **If the PR has been merged, the DNS records will be updated in a few minutes.**
-- **If the PR has been merged but the DNS records haven't updated and you have waited 48 hours, [open a GitHub issue](https://github.com/meowed-at-me/register/issues/new/choose) or a help thread in the meowed-at.me [Discord server](https://discord.gg/KFEN5E3PyR).**
+- **If the PR has been merged but the DNS records haven't updated and you have waited 48 hours, [open a GitHub issue](https://github.com/has-a-space/register/issues/new/choose) or a help thread in the has-a.space [Discord server](https://discord.gg/KFEN5E3PyR).**

@@ -5,9 +5,9 @@ icon: mark-github
 tags: guides
 ---
 
-## Setting up GitHub pages with an meowed-at.me subdomain
+## Setting up GitHub pages with an has-a.space subdomain
 
-This guide will walk you through the process of setting up a GitHub Pages site and pointing your meowed-at.me subdomain to it.
+This guide will walk you through the process of setting up a GitHub Pages site and pointing your has-a.space subdomain to it.
 
 ### Creating a GitHub Pages repository
 
@@ -30,11 +30,11 @@ Create a JSON file inside `domains` directory (`domains/subdomain.json`) with th
 
 ### Configuring
 
-- After the pull request is merged, you may see a **404** error on `subdomain.meowed-at.me` or the wrong site. To fix this issue, go to your GitHub pages repository and navigate to: **Settings > GitHub pages > Custom Domain** and add `subdomain.meowed-at.me` in the given field. *Only do this **after** your pull request is merged.*
+- After the pull request is merged, you may see a **404** error on `subdomain.has-a.space` or the wrong site. To fix this issue, go to your GitHub pages repository and navigate to: **Settings > GitHub pages > Custom Domain** and add `subdomain.has-a.space` in the given field. *Only do this **after** your pull request is merged.*
 - Check the **Enforce HTTPS** checkbox below the custom domain input.
 - Wait some time and your site should be live!
 
-## Verifying your meowed-at.me Subdomain with GitHub Pages
+## Verifying your has-a.space Subdomain with GitHub Pages
 
 ### Get your verification string
 
@@ -50,7 +50,7 @@ Create a JSON file inside `domains` directory (`domains/subdomain.json`) with th
 
 ![](../media/github_pages_verification/step_3.png)
 
-4. In the field that appears, type your meowed-at.me subdomain name (e.g. `myname.meowed-at.me`) and press `Add domain`.
+4. In the field that appears, type your has-a.space subdomain name (e.g. `myname.has-a.space`) and press `Add domain`.
 
 ![](../media/github_pages_verification/step_4.png)
 
@@ -60,7 +60,7 @@ Create a JSON file inside `domains` directory (`domains/subdomain.json`) with th
 
 ### Create the domain file
 
-Create a JSON file inside the `domains/` directory called `domains/hostname.subdomain.json` using the hostname you copied in step 5 and subdomain (`subdomain.meowed-at.me`) with the following content and submit a pull request:
+Create a JSON file inside the `domains/` directory called `domains/hostname.subdomain.json` using the hostname you copied in step 5 and subdomain (`subdomain.has-a.space`) with the following content and submit a pull request:
 
 ```json
 {

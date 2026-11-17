@@ -5,9 +5,9 @@ icon: /media/codeberg.svg
 tags: guides
 ---
 
-# Setting up Codeberg Pages with an meowed-at.me subdomain
+# Setting up Codeberg Pages with an has-a.space subdomain
 
-This guide will walk you through the process of setting up a Codeberg Pages (or any git-pages host) website and pointing your meowed-at.me subdomain to it.
+This guide will walk you through the process of setting up a Codeberg Pages (or any git-pages host) website and pointing your has-a.space subdomain to it.
 
 ## Create a Codeberg Pages Website
 
@@ -53,7 +53,7 @@ Make sure you have created the above two files properly, and then submit a Pull 
 
 - Navigate to the webhooks section of your Codeberg repository: <https://codeberg.org/USERNAME/REPOSITORY/settings/hooks>
 - Click `Add webhook` and select `Forgejo` in the dropdown menu.
-- Set `Target URL` to `https://subdomain.meowed-at.me` and set `Branch filter` to `pages`
+- Set `Target URL` to `https://subdomain.has-a.space` and set `Branch filter` to `pages`
 - Now submit the form using `Add webhook` button at the bottom.
 
 Now, make sure your site's html and other content is stored in the `pages` branch of your repository.

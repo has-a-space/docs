@@ -5,8 +5,8 @@ icon: home
 <!-- Do not provide meta name as it messes with SEO -->
 ![](media/banner.png)
 
-# meowed-at.me Documentation
-Here you'll find detailed guides, the JSON file structure, and more. If you'd like to contribute to our documentation, visit [our documentation repository](https://github.com/meowed-at-me/docs) on GitHub.
+# has-a.space Documentation
+Here you'll find detailed guides, the JSON file structure, and more. If you'd like to contribute to our documentation, visit [our documentation repository](https://github.com/has-a-space/docs) on GitHub.
 
 ## How to Register
 For our Quick Start guide you can click [here](quickstart) to read it. You can also read about the domains' JSON file structure [here](useful/domain-structure).
@@ -33,12 +33,12 @@ For our Quick Start guide you can click [here](quickstart) to read it. You can a
  - [Resources](useful/resources)
 
 ## Official Subdomains
-These are the official subdomains run by the meowed-at.me staff team.
+These are the official subdomains run by the has-a.space staff team.
 
-- [`meowed-at.me`](https://meowed-at.me) (the root domain, used for the main page, documentation, and emails.)
-- [`www.meowed-at.me`](https://www.meowed-at.me) (redirects to the main page.)
-- `docs.meowed-at.me` (this website.)
+- [`has-a.space`](https://has-a.space) (the root domain, used for the main page, documentation, and emails.)
+- [`www.has-a.space`](https://www.has-a.space) (redirects to the main page.)
+- `docs.has-a.space` (this website.)
 
-**Do *NOT* trust any websites claiming to be us that are not listed here. If you find any, please report them to [admin@meowed-at.me](mailto:admin@meowed-at.me).**
+**Do *NOT* trust any websites claiming to be us that are not listed here. If you find any, please report them to [admin@has-a.space](mailto:admin@has-a.space).**
 
-*We do not send unsolicited emails to users, do not trust any unsolicited emails claiming they are us. Report any unsolicited emails to [admin@meowed-at.me](mailto:admin@meowed-at.me).*
+*We do not send unsolicited emails to users, do not trust any unsolicited emails claiming they are us. Report any unsolicited emails to [admin@has-a.space](mailto:admin@has-a.space).*

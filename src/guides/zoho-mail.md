@@ -5,16 +5,16 @@ label: Zoho Mail
 tags: guides
 ---
 
-# Setting up Zoho Mail using meowed-at.me subdomain
+# Setting up Zoho Mail using has-a.space subdomain
 
-This guide will walk you through the process of setting up custom email in Zoho Mail with your meowed-at.me subdomain.
+This guide will walk you through the process of setting up custom email in Zoho Mail with your has-a.space subdomain.
 
 ## Getting Started
 
 ![](../media/zohomail/step_1.png)
 
 1. Visit the [Zoho Mail homepage](https://www.zoho.com/mail/), fill in the required details, and click **SIGN UP FOR FREE** to create your account. If you already have one, visit [here](https://www.zoho.com/mail/login.html) to login to your existing account.
-2. You must have an meowed-at.me subdomain to set up and use Zoho Mail services. Learn more in our [GitHub repository](https://github.com/meowed-at-me/register).
+2. You must have an has-a.space subdomain to set up and use Zoho Mail services. Learn more in our [GitHub repository](https://github.com/has-a-space/register).
 3. A valid mobile number and an email address for verification purposes is **required** to access Zoho Mail.
 
 ## Verify your domain
@@ -24,7 +24,7 @@ After logging in to your Zoho Mail account, follow the steps given to verify you
 
    ![](../media/zohomail/step_2.png)
 
-2. Enter `your-domain.meowed-at.me` subdomain and the name of your organization in the pop-up. The organization name can be your personal name too. Click **Add now** to proceed.
+2. Enter `your-domain.has-a.space` subdomain and the name of your organization in the pop-up. The organization name can be your personal name too. Click **Add now** to proceed.
 
    ![](../media/zohomail/step_3.png)
 
@@ -36,7 +36,7 @@ After logging in to your Zoho Mail account, follow the steps given to verify you
 
    ![](../media/zohomail/step_5.png)
 
-   You need to copy the **TXT value / content** and create a new file or update an existing file, for example `your-domain.json`. After that, please open a pull request in [our repository](https://github.com/meowed-at-me/register) and **wait for the pull request to be merged**.
+   You need to copy the **TXT value / content** and create a new file or update an existing file, for example `your-domain.json`. After that, please open a pull request in [our repository](https://github.com/has-a-space/register) and **wait for the pull request to be merged**.
 
    ```json
    {
@@ -49,14 +49,14 @@ After logging in to your Zoho Mail account, follow the steps given to verify you
    }
    ```
 
-6. Now that you have verified ownership of your domain, click **Create** to create your first email using your meowed-at.me subdomain.
+6. Now that you have verified ownership of your domain, click **Create** to create your first email using your has-a.space subdomain.
 
    ![](../media/zohomail/step_6.png)
 
 
 ## DNS Mapping
 
-After you verified your domain, you may see the **Setup Users** and **Setup Groups** sections, where you can set up your users (such as example@your-domain.meowed-at.me) and groups. For now, you can skip these and move on to **DNS Mapping**.
+After you verified your domain, you may see the **Setup Users** and **Setup Groups** sections, where you can set up your users (such as example@your-domain.has-a.space) and groups. For now, you can skip these and move on to **DNS Mapping**.
 
 ### MX and SPF Records 
 
@@ -98,7 +98,7 @@ After you verified your domain, you may see the **Setup Users** and **Setup Grou
 
 ### DKIM Record
 
-2. Now only **DKIM record** is left, for this you have to create a **new file** named `zmail._domainkey.your-domain.json`. Please note that `your-domain` should be replaced with the meowed-at.me subdomain that you own.
+2. Now only **DKIM record** is left, for this you have to create a **new file** named `zmail._domainkey.your-domain.json`. Please note that `your-domain` should be replaced with the has-a.space subdomain that you own.
 
    Paste the following content in your `zmail._domainkey.your-domain.json` file:
 
@@ -113,11 +113,11 @@ After you verified your domain, you may see the **Setup Users** and **Setup Grou
    }
    ```
 
-   After you have done all, please create a pull request in [our repository](https://github.com/meowed-at-me/register) and wait for it to get merged.
+   After you have done all, please create a pull request in [our repository](https://github.com/has-a-space/register) and wait for it to get merged.
 
 
 ## You're all set
 
 ![](../media/zohomail/step_8.png)
 
-After all your pull requests has been merged, you will see the same page as above, if you see it, you are all set and your email is now ready to use with the meowed-at.me subdomain. Enjoy your custom email!
+After all your pull requests has been merged, you will see the same page as above, if you see it, you are all set and your email is now ready to use with the has-a.space subdomain. Enjoy your custom email!

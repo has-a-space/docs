@@ -7,7 +7,7 @@ tags: guides
 
 # Hashnode Blog
 
-When you create your Hashnode blog, Hashnode provides a free `hashnode.dev` subdomain for you. However, you can alternatively set up your own `meowed-at.me` subdomain.
+When you create your Hashnode blog, Hashnode provides a free `hashnode.dev` subdomain for you. However, you can alternatively set up your own `has-a.space` subdomain.
 
 In this guide, you will learn how to accomplish this.
 
@@ -24,7 +24,7 @@ In this guide, you will learn how to accomplish this.
 1. Navigate to the **Domain** tab and enter your domain without the **www** or **https://** prefix in the text field provided. Then click on the **Update** button to proceed.
    ![Hashnode's Blog Domain Tab](https://cdn.hashnode.com/res/hashnode/image/upload/v1614937377176/0cwddAywO.png?auto=compress)
 
-1. Go to your fork of the `meowed-at-me/register` repository, edit your subdomain's JSON file, make sure you remove any old records, then add this to the `record` key and create a PR:
+1. Go to your fork of the `has-a-space/register` repository, edit your subdomain's JSON file, make sure you remove any old records, then add this to the `record` key and create a PR:
 
 ```json
 "CNAME": "hashnode.network"
@@ -34,7 +34,7 @@ In this guide, you will learn how to accomplish this.
 
 Once done, your Hashnode blog should be setup to use your subdomain. These changes could take from 1 hour to around 48 hours, so please be patient. It'll most likely be ready within a hour.
 
-Once the DNS has propagated, you can start enjoying your Hashnode blog with your sweet `.meowed-at.me` subdomain!
+Once the DNS has propagated, you can start enjoying your Hashnode blog with your sweet `.has-a.space` subdomain!
 
 ## Need More Help?
 
@@ -43,4 +43,4 @@ If you encounter any issues or need further assistance, consider the following r
 - [Hashnode Domain Mapping Guide](https://support.hashnode.com/docs/mapping-domain/): This support article provides detailed instructions on mapping your domain in Hashnode.
 - [Hashnode Support Center](https://support.hashnode.com/): For more general help related to Hashnode, visit their Support Center.
 
-Please note that meowed-at.me is not affiliated with Hashnode. If you're experiencing issues with your Hashnode blog, please seek help through Hashnode's support channels. We are unable to assist with Hashnode-specific issues.
+Please note that has-a.space is not affiliated with Hashnode. If you're experiencing issues with your Hashnode blog, please seek help through Hashnode's support channels. We are unable to assist with Hashnode-specific issues.

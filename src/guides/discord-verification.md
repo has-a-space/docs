@@ -5,7 +5,7 @@ label: Discord Domain Connection
 tags: guides
 ---
 
-# Setting up Discord domain connection with your meowed-at.me subdomain
+# Setting up Discord domain connection with your has-a.space subdomain
 
 ## Get your verification string
 
@@ -21,7 +21,7 @@ tags: guides
 4. Click on the domain button (the globe icon).
    ![](../media/discord/step_4.png)
 
-5. In the field that appears type your meowed-at.me domain name (e.g. `your-domain.meowed-at.me`).
+5. In the field that appears type your has-a.space domain name (e.g. `your-domain.has-a.space`).
    ![](../media/discord/step_5.png)
 
 6. Copy the verification string.

@@ -5,13 +5,13 @@ label: Replit
 tags: guides
 ---
 
-# Setting up Replit with an meowed-at.me subdomain
+# Setting up Replit with an has-a.space subdomain
 
 ## Creating a project
 
 Follow the instructions in the [Replit Workspace Guide](https://docs.replit.com/programming-ide/introduction-to-the-workspace#how-to-create-a-repl) on how to create a project.
 
-### Connect your Replit site to your meowed-at.me subdomain
+### Connect your Replit site to your has-a.space subdomain
 
 Follow the instructions in the [Replit Custom Domains Guide](https://docs.replit.com/features/publishing/custom-domains#connect-a-domain-manually).
 
@@ -36,4 +36,4 @@ Create a JSON file inside `domains` directory (`domains/subdomain.json`) with th
 
 ## Finish
 
-Once your pull request has been merged you should be able to visit your new meowed-at.me subdomain connected to your Replit site!
+Once your pull request has been merged you should be able to visit your new has-a.space subdomain connected to your Replit site!

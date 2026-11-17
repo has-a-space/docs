@@ -1,23 +1,23 @@
 input: ./src
 output: .retype
-url: docs.meowed-at.me
+url: docs.has-a.space
 branding:
-  title: meowed-at.me Docs
+  title: has-a.space Docs
   logo: /media/collar.svg
   logoAlign: left
   colors:
     label:
       text: "#ffffff"
-      background: "#eb459e"
+      background: "#22c55e"
 links:
   - text: Home
     link: index.md
     icon: home
   - text: Website
-    link: https://meowed-at.me
+    link: https://has-a.space
     icon: globe
   - text: Register
-    link: https://github.com/meowed-at-me/register
+    link: https://github.com/has-a-space/register
     icon: mark-github
     target: blank
   - text: Discord
@@ -25,7 +25,7 @@ links:
     icon: comment-discussion
     target: blank
 edit:
-  repo: "https://github.com/meowed-at-me/docs"
+  repo: "https://github.com/has-a-space/docs"
   base: "/src"
   branch: "main"
   label: "Edit this page"
@@ -37,7 +37,7 @@ generator:
 markdown:
   lineBreaks: soft
 meta:
-  title: " | meowed-at.me Docs"
+  title: " | has-a.space Docs"
 search:
   hotkeys:
     - "/"
@@ -56,7 +56,7 @@ templating:
   enabled: true
   liquid: false
 footer:
-  copyright: "&copy; {{ year }} meowed-at.me. Based on the is-a.dev docs (GPL-3.0)."
+  copyright: "&copy; {{ year }} has-a.space. Based on the is-a.dev docs (GPL-3.0)."
   links:
-    - text: meowed-at-me/docs
-      link: https://github.com/meowed-at-me/docs
+    - text: has-a-space/docs
+      link: https://github.com/has-a-space/docs

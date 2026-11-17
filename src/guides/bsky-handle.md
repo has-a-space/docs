@@ -5,7 +5,7 @@ label: Bluesky Custom Handle
 tags: guides
 ---
 
-# Setting up a Bluesky custom handle with an meowed-at.me subdomain
+# Setting up a Bluesky custom handle with an has-a.space subdomain
 
 ## Get your verification string
 
@@ -25,7 +25,7 @@ tags: guides
 
    ![](../media/bsky/step_4.png)
 
-5. **Enter** your meowed-at.me subdomain name in the text input and then **Copy** the TXT string. (e.g. `your-subdomain.meowed-at.me`).
+5. **Enter** your has-a.space subdomain name in the text input and then **Copy** the TXT string. (e.g. `your-subdomain.has-a.space`).
 
    ![](../media/bsky/step_5.png)
 
